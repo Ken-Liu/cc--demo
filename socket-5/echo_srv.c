@@ -85,10 +85,7 @@ int main(void)
     int len = sizeof(srv_addr);
     int client[FD_SETSIZE];
     int i;
-    for(i=0; i<FD_SETSIZE; i++)
-    {
-        client[i] = -1;
-    }
+    memset(client, -1, sizeof(client));
     fd_set allset;
     fd_set set;
     FD_ZERO(&set);
